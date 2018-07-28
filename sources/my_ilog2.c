@@ -1,6 +1,6 @@
 #include "my_stupidmath.h"
 
-int		my_log2(uintmax_t x)
+int		my_ilog2(uintmax_t x)
 {
 	int		i;
 
