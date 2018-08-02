@@ -6,24 +6,33 @@
 /*constants*/
 
 # define M_El 2.718281828459045235360287471352662498L
+# define M_LN2 0.693147180559945309417232121458176568L
 
 
 /*functions*/
 
 long double
-	my_expl(
+	expl(
 		long double x);
 
 int
-	my_ilog2(
+	flog2(
 		uintmax_t);
 
 long double
-	my_lnl(
+	intpow(
+		long double x, intmax_t n);
+
+long double
+	lnl(
 		long double x);
 
 long double
-	my_powl(
+	powl(
 		long double x, long double y);
+
+long double
+	uintpow(
+		long double x, uintmax_t n);
 
 #endif

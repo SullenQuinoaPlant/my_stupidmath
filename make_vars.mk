@@ -13,9 +13,6 @@ OUT_DIR_H := $(LIBS_I)
 include $(SRC_DIR)/targets.mk
 
 CC := gcc
-ifndef ARCH
-	ARCH := ARCH_A
-endif
 CFLAGS_MORE =
 ifndef CFLAGS
 	CFLAGS := -Wall -Wextra -Werror -D $(ARCH)
