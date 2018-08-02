@@ -12,6 +12,8 @@ OUT_DIR_H := $(LIBS_I)
 
 include $(SRC_DIR)/targets.mk
 
+DEPENDENCIES = libmyfloatingpoint
+
 CC := gcc
 CFLAGS_MORE =
 ifndef CFLAGS
