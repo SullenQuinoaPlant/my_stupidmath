@@ -1,4 +1,4 @@
-#include "my_stupidmath.h"
+#include "inner.h"
 
 int		my_ilog2(uintmax_t x)
 {

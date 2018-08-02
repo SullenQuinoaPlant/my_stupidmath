@@ -10,7 +10,6 @@ all : $(OUT_DIR_LIB)/$(LIBNAME).a
 
 $(OUT_DIR_LIB)/$(LIBNAME).a : $(OBJ_DIR)/$(NAME).o
 	-ar rcs $@ $<
-#	mv $@ $(OUT_DIR_LIB)/
 	cp $(SRC_DIR)/$(NAME).h $(OUT_DIR_H)/$(LIBNAME).h
 
 $(OBJ_DIR)/$(NAME).o : $(OBJS)
@@ -18,12 +17,6 @@ $(OBJ_DIR)/$(NAME).o : $(OBJS)
 
 #specifc file dependencies:
 
-$(SRC_DIR)/parse_format_string.c \
-$(SRC_DIR)/my_lstappend.c : $(SRC_DIR)/my_lstappend.h
-	touch $@
-
-$(SRC_DIR)/my_utf8.c : $(SRC_DIR)/my_utf8.h
-	touch $@
 
 
 #compilation :
@@ -38,6 +31,7 @@ objdir :
 		mkdir $(OBJ_DIR);\
 	fi
 
+.PHONY : re fclean clean all
 clean :
 	-rm $(OBJS)
 	-rm $(OBJ_DIR)/$(NAME).o
@@ -47,5 +41,3 @@ fclean : clean
 	-rm $(OUT_DIR_H)/$(LIBNAME).h
 
 re : fclean all
-
-.PHONY : re fclean clean all
