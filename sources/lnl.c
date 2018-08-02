@@ -5,6 +5,10 @@ t_s_iaf
 	split_x(
 		long double x)
 {
+	t_s_iaf	ret;
+
+	ret = (t_s_iaf){0, 0};
+	return (ret);
 }
 
 static
@@ -12,6 +16,7 @@ long double
 	series(
 		long double xx)
 {
+	return (0);
 }
 
 long double

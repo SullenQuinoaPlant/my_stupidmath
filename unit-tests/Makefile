@@ -5,7 +5,6 @@ endif
 
 TEST_SRCS := $(wildcard $(UTEST_DIR)/*.test.c)
 TEST_OBJS := $(TEST_SRCS:.c=.o)
-#BUILD_STAMPS := $(TEST_OBJS:.o=.build.stamp)
 EXECUTION_STAMPS := $(TEST_OBJS:.o=.execution.stamp)
 
 CFLAGS_UTEST = -fno-builtin -g
