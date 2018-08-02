@@ -4,7 +4,7 @@ ifndef ROOT
 endif
 
 
-.PHONY build_dependencies
+.PHONY : build_dependencies
 build_dependecies : $(DEPENDENCIES)
 
 define BUILD_LIB
