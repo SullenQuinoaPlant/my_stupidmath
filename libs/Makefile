@@ -24,7 +24,7 @@ libft :
 	$(BUILD_LIB)
 
 
-libmyfloatingpont :
+libmyfloatingpoint :
 	git clone \
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
