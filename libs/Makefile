@@ -6,6 +6,7 @@ endif
 
 .PHONY : build_dependencies
 build_dependecies : $(DEPENDENCIES)
+	@echo "$(DEPENDENCIES)"
 
 define BUILD_LIB
 	$(MAKE) -C $@/ 
