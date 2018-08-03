@@ -27,6 +27,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		long double	diff;
 		long double	max_diff;
 
+		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
 			diff = ln_diff(x);
