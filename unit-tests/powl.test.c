@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define HOW_MANY_TESTS 10
-#include "my_overlay.h"
+#include "cmocka/my_overlay.h"
 
 int	declare_tests_and_run(int all_of, char *these[])
 {

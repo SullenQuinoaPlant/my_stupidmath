@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define HOW_MANY_TESTS 10
-#include "my_overlay.h"
+#include "cmocka/my_overlay.h"
 
 #include "mystupidmath.h"
 
