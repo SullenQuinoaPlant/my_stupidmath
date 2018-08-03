@@ -23,11 +23,11 @@ long double
 int	declare_tests_and_run(int all_of, char *these[])
 {
 	T(macro,
-		int		i = -1;
+		int		i = -2;
 
 		i = ABS(i);
 		printf("i is : %d\n", i);
-		assert_true(i == 1);
+		assert_true(i == 2);
 	)
 
 	T(letswatch,
