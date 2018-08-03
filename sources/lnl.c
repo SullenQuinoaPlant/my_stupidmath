@@ -26,7 +26,7 @@ t_s_iaf
 #ifdef LNL_SERIES_DEPTH
 # define SERIES_DEPTH LNL_SERIES_DEPTH
 #else
-# define SERIES_DEPTH 15
+# define SERIES_DEPTH 100
 #endif
 
 static
