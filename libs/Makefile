@@ -20,7 +20,7 @@ libft :
 	git clone \
 		--single-branch \
 		-b the_lib https://github.com/SullenQuinoaPlant/Libft.git \
-		-depth 1 \
+		--depth 1 \
 		$@/
 	$(BUILD_LIB)
 
@@ -29,7 +29,7 @@ libmyfloatingpoint :
 	git clone \
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
-		-depth 1 \
+		--depth 1 \
 		$(BUILD_DIR)/
 	$(BUILD_LIB)
 
