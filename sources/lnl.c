@@ -63,5 +63,5 @@ long double
 	else if (x == 0.0L)
 		return (compose_minf());
 	split = split_x(x);
-	return (intpow(M_LN2, split.i) * series(split.f));
+	return (M_LN2 * split.i + series(split.f));
 }
