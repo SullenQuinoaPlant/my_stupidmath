@@ -47,7 +47,7 @@ cmocka :
 		-include $(SRC_DIR)/$*.c\
 		$<\
 		-L $(LIBS_L)\
-		-lcmocka -lft -lmyfloatingpoint\
+		-lcmocka -lmyfloatingpoint\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))
 
@@ -59,7 +59,7 @@ cmocka :
 		$<\
 		-L $(LIBS_L)\
 		-l $(LIBNAME).a\
-		-lcmocka -lft\
+		-lcmocka \
 		-lm\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))
