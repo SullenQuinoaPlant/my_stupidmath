@@ -7,6 +7,7 @@ t_s_iaf
 {
 	t_s_iaf	ret;
 
+	(void)x;
 	ret = (t_s_iaf){0, 0};
 	return (ret);
 }
@@ -16,6 +17,7 @@ long double
 	series(
 		long double xx)
 {
+	(void)xx;
 	return (0);
 }
 
