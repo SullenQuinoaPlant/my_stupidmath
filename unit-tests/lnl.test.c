@@ -26,6 +26,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		int		i = -1;
 
 		i = ABS(i);
+		printf("i is : %d\n", i);
 		assert_true(i == 1);
 	)
 
