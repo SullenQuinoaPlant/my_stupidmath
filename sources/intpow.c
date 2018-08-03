@@ -13,7 +13,7 @@ long double
 static
 long double
 	recursion(
-		uintamx_t power, long double val,
+		uintmax_t power, long double val,
 		uintmax_t *n, long double *res)
 {
 	if (*n & power)
