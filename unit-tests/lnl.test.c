@@ -35,6 +35,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 			if (ABS(diff) > ABS(max_diff))
 				max_diff = diff;
 		}
+		printf("max_diff is : %f\n", max_diff);
 		assert_true(max_diff < MAX_ERROR);
 	)
 	return (run_test_arr(all_of, these));
