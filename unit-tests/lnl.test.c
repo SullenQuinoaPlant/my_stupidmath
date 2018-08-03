@@ -22,6 +22,13 @@ long double
 
 int	declare_tests_and_run(int all_of, char *these[])
 {
+	T(macro,
+		int		i = -1;
+
+		i = ABS(i);
+		assert_true(i == 1);
+	)
+
 	T(letswatch,
 		long double	x;
 		long double	diff;
