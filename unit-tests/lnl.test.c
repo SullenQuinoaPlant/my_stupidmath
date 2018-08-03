@@ -2,6 +2,7 @@
 #define HOW_MANY_TESTS 10
 #include "cmocka/my_overlay.h"
 
+#include <math.h>
 #include "mystupidmath.h"
 
 #define MAX_ERROR 0.00001

@@ -45,6 +45,7 @@ cmocka :
 		$<\
 		-L $(LIBS_L)\
 		-lcmocka -lmyfloatingpoint -lft -l$(NAME)\
+		-lm\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))
 
