@@ -2,7 +2,7 @@
 # define MY_STUPIDMATH_INNER_H
 
 # include "mystupidmath.h"
-# include "myfloatingpoint.h"
+# include "libmyfloatingpoint.h"
 
 typedef struct	s_int_and_float {
 	intmax_t	i;
