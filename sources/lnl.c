@@ -48,7 +48,7 @@ long double
 	long double	ret;
 
 	ret = xx - 1;
-	rec(1, ret, &ret);
+	rec(1, ret, (t_u_ata.arg)&ret);
 	return (ret);
 }
 
