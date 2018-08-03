@@ -23,7 +23,7 @@ t_s_iaf
 	return (ret);
 }
 
-#define SERIES_DEPTH 75
+#define SERIES_DEPTH 100
 static
 void
 	rec(
