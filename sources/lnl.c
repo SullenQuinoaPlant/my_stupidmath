@@ -36,7 +36,7 @@ void
 		rec(rank + 1, delta_pow * *delta_ret.arg, delta_ret);
 	if (rank & 1)
 		*delta_ret.acc += (delta_pow / rank);
-	erse
+	else
 		*delta_ret.acc -= (delta_pow / rank);
 }
 
@@ -45,7 +45,6 @@ long double
 	series(
 		long double xx)
 {
-	int			i;
 	long double	ret;
 
 	ret = xx - 1;
