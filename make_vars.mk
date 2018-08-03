@@ -12,7 +12,7 @@ OUT_DIR_H := $(LIBS_I)
 
 include $(SRC_DIR)/targets.mk
 
-DEPENDENCIES = libmyfloatingpoint
+DEPENDENCIES = libmyfloatingpoint libft
 
 CC := gcc
 CFLAGS_MORE =
