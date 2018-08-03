@@ -16,10 +16,11 @@ int	declare_tests_and_run(int all_of, char *these[])
 		long double	diff;
 		long double	max_diff;
 
-		for (x 0.1L; x < 1; x += 0.1)
+		for (x = 0.1L; x < 1; x += 0.1)
 		{
 			diff = lnl(x) - logl(x);
-			max_diff = ABS(diff) > ABS(max_diff) ? diff;
+			if (ABS(diff) > ABS(max_diff))
+				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR);
 	)
