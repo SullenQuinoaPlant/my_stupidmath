@@ -20,6 +20,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
 			diff = lnl(x) - logl(x);
+			printf("diff is :%f\n", diff);
 			if (ABS(diff) > ABS(max_diff))
 				max_diff = diff;
 		}
