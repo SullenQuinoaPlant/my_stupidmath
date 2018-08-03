@@ -1,6 +1,6 @@
 # include "inner.h"
 
-/*big is used to avoid lest good approximations
+/*big is used to avoid least good approximations
 **near x=2; Not sure it's worth it considering 
 **the loss of precision.*/
 static
@@ -10,12 +10,12 @@ t_s_iaf
 {
 	t_s_iaf	ret;
 	t_s_dfp	dec;
-	uint64_t	const big = (uint64_t)1 << 40;
+	long double	const big = 1.9375L;
 
 	decompose_ldouble(&x, &dec);
 	ret.i = dec.exp;
 	ret.f = make_ldouble(0, dec.mant, -LDB_MANT_PRECISION);
-	if (dec.mant > big)
+	if (ret.f > big)
 	{
 		ret.i++;
 		ret.f /=2;
@@ -23,7 +23,12 @@ t_s_iaf
 	return (ret);
 }
 
-#define SERIES_DEPTH 100
+#ifdef LNL_SERIES_DEPTH
+# define SERIES_DEPTH LNL_SERIES_DEPTH
+#else
+# define SERIES_DEPTH 15
+#endif
+
 static
 void
 	rec(

@@ -3,13 +3,17 @@
 
 # include <stdint.h>
 
-/*constants*/
+/*computation options :*/
+/*# define LNL_SERIES_DEPTH 9000 //see lnl.c*/
 
-# define M_El 2.718281828459045235360287471352662498L
+
+/*mathematical constants :*/
+
+# define M_E 2.718281828459045235360287471352662498L
 # define M_LN2 0.693147180559945309417232121458176568L
 
 
-/*functions*/
+/*functions :*/
 
 long double
 	expl(
