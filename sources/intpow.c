@@ -11,7 +11,7 @@ long double
 }
 
 static
-long double
+void
 	recursion(
 		uintmax_t power, long double val,
 		uintmax_t *n, long double *res)
