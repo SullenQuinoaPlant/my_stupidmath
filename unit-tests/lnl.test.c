@@ -42,16 +42,20 @@ int	declare_tests_and_run(int all_of, char *these[])
 		long double	max_diff;
 
 		max_diff = 0;
+printf("m_d : %A\n", max_diff);
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
 			diff = ln_diff(x);
 			printf("diff is :%f\n", diff);
 			if (diff > max_diff)
+{
 				max_diff = diff;
+printf("m_d : %A\n", max_diff);
+}
 			else if (-1 * diff > max_diff)
 			{
-				printf("yo\n");
-				max_diff = diff * -1.0L;
+				max_diff = -diff;
+printf("m_d : %A\n", max_diff);
 			}
 		}
 printf("max_diff : %A, abs of :%lf\n", max_diff, ABS(max_diff));
