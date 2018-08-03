@@ -26,3 +26,5 @@ $(SOURCE_DIR) :
 		--depth 1 \
 		git://git.cryptomilk.org/projects/cmocka.git \
 		$(SOURCE_DIR)
+#hack to get buggy doxygen to shut up:
+	echo "" > $(SOURCE_DIR)/doc/CMakeLists.txt
