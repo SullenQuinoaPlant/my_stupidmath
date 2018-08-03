@@ -21,7 +21,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 	T(test5,
 		assert_true(4.0 == uintpow(2, 2));
 	)
-	T(test2,
+	T(test6,
 		assert_true(0.25L == intpow(0.5L, 2));
 	)
 
