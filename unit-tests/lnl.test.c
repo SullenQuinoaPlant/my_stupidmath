@@ -43,6 +43,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 			if (ABS(diff) > max_diff)
 				max_diff = ABS(diff);
 		}
+printf("max_diff : %f, abs of :%f\n", max_diff, ABS(max_diff));
 printf("%f comp : %d : error : %f\n", max_diff, (max_diff < MAX_ERROR), MAX_ERROR);
 		assert_true(max_diff < MAX_ERROR);
 	)
