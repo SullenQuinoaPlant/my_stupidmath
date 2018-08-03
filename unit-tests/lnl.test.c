@@ -54,8 +54,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 				max_diff = diff * -1.0L;
 			}
 		}
-printf("max_diff : %f, abs of :%f\n", max_diff, ABS(max_diff));
-printf("%f comp : %d : error : %f\n", max_diff, (max_diff < MAX_ERROR), MAX_ERROR);
+printf("max_diff : %lf, abs of :%lf\n", max_diff, ABS(max_diff));
+printf("%lf comp : %d : error : %lf\n", max_diff, (max_diff < MAX_ERROR), MAX_ERROR);
 		assert_true(max_diff < MAX_ERROR);
 	)
 	return (run_test_arr(all_of, these));
