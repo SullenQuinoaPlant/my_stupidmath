@@ -30,7 +30,9 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(i == 2);
 
 		long double	d = -2.0L;
+
 		d = ABS(d);
+		printf("d is :%f\n", d);
 		assert_true(d == 2.0L);
 	)
 
