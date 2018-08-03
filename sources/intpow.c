@@ -17,9 +17,9 @@ long double
 		uintmax_t *n, long double *res)
 {
 	if (*n & power)
-		res *= val;
+		*res *= val;
 	if (power < *n)
-	recursion(power * 2, val * val, n);
+	recursion(power * 2, val * val, n, res);
 }
 
 long double
