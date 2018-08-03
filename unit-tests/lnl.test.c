@@ -5,7 +5,7 @@
 #include <math.h>
 #include "mystupidmath.h"
 
-#define MAX_ERROR 0.00001
+#define MAX_ERROR 0.00001L
 
 #define ABS(x) \
 	((x) < 0 ? -(x) : (x))
@@ -32,10 +32,10 @@ int	declare_tests_and_run(int all_of, char *these[])
 		{
 			diff = ln_diff(x);
 			printf("diff is :%f\n", diff);
-			if (ABS(diff) > ABS(max_diff))
+			if ((diff = ABS(diff)) > max_diff)
 				max_diff = diff;
 		}
-		assert_true(ABS(max_diff) < MAX_ERROR);
+		assert_true(max_diff < MAX_ERROR);
 	)
 	return (run_test_arr(all_of, these));
 }
