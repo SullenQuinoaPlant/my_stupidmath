@@ -17,7 +17,7 @@ DEPENDENCIES = libmyfloatingpoint
 CC := gcc
 CFLAGS_MORE =
 ifndef CFLAGS
-	CFLAGS := -Wall -Wextra -Werror -D $(ARCH)
+	CFLAGS := -Wall -Wextra -Werror
 endif
 CFLAGS += $(CFLAGS_MORE)
 

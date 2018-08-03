@@ -20,7 +20,7 @@ $(OBJ_DIR)/$(NAME).o : $(OBJS)
 
 
 #compilation :
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | objdir
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c #| objdir
 	$(CC) $(CFLAGS)\
 		-I $(LIBS_I)\
 		-o $@ -c $<
