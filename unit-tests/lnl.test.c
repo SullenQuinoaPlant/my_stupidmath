@@ -10,6 +10,16 @@
 #define ABS(x) \
 	((x) < 0 ? -(x) : (x))
 
+static
+long double
+	ln_diff(
+		long double x)
+{
+	long double	ref = logl(x);
+	long double tst = lnl(x);
+	return (tst - ref);
+}
+
 int	declare_tests_and_run(int all_of, char *these[])
 {
 	T(letswatch,
@@ -19,7 +29,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = lnl(x) - logl(x);
+			diff = ln_diff(x);
 			printf("diff is :%f\n", diff);
 			if (ABS(diff) > ABS(max_diff))
 				max_diff = diff;
