@@ -28,6 +28,10 @@ int	declare_tests_and_run(int all_of, char *these[])
 		i = ABS(i);
 		printf("i is : %d\n", i);
 		assert_true(i == 2);
+
+		long double	d = -2.0L;
+		d = ABS(d);
+		assert_true(d == 2.0L);
 	)
 
 	T(letswatch,
