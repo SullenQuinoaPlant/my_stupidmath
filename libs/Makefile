@@ -30,7 +30,7 @@ libmyfloatingpoint :
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
 		--depth 1 \
-		$(BUILD_DIR)/
+		$@/
 	$(BUILD_LIB)
 
 
