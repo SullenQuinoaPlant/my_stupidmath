@@ -36,9 +36,6 @@ cmocka :
 	else\
 		echo "installing cmocka";\
 		$(MAKE) -C $(UTEST_DIR)/cmocka/;\
-		mv $(UTEST_DIR)/cmocka/libcmocka* $(LIBS_L)/;\
-		mv $(UTEST_DIR)/cmocka/cmocka.h $(LIBS_I)/;\
-		echo "cmocka installed";\
 	fi
 	-@rm ./test.o
 
