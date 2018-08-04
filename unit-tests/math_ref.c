@@ -1,8 +1,8 @@
 #include <math.h>
 
-long double	lm_powl(long double x)
+long double	lm_powl(long double x, long double y)
 {
-	return (powl(x));
+	return (powl(x, y));
 }
 
 long double	lm_expl(long double x)
