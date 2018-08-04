@@ -1,13 +1,13 @@
 #include "inner.h"
 
 long double
-	intpow(
+	intpowl(
 		long double x, intmax_t n)
 {
 	if (n < 0)
-		return (uintpow(x ? 1 / x : x, -n));
+		return (uintpowl(x ? 1 / x : x, -n));
 	else
-		return (uintpow(x, n));
+		return (uintpowl(x, n));
 }
 
 static
@@ -23,7 +23,7 @@ void
 }
 
 long double
-	uintpow(
+	uintpowl(
 		long double x, uintmax_t n)
 {
 	long double	ret;

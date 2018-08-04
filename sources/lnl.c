@@ -35,7 +35,7 @@ void
 		int rank, long double delta_pow,
 		t_u_ata delta_ret)
 {
-	if (!(rank <= SERIES_DEPTH && delta_pow))
+	if (!(rank <= SERIES_DEPTH))
 		*delta_ret.acc = 0;
 	else
 		rec(rank + 1, delta_pow * *delta_ret.arg, delta_ret);
@@ -63,10 +63,12 @@ long double
 {
 	t_s_iaf	split;
 
-	if (x < 0.0L)
+	if (x < 0.0L || x == compose_minf())
 		return (compose_nan());
 	else if (x == 0.0L)
 		return (compose_minf());
+	else if (x == compose_pinf())
+		return (compose_pinf());
 	split = split_x(x);
-	return (M_LN2 * split.i + series(split.f));
+	return (M_LN2l * split.i + series(split.f));
 }
