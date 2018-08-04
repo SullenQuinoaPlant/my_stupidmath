@@ -36,8 +36,6 @@ long double
 	expl(
 		long double x)
 {
-	t_s_iaf	split;
-
 	if (x == compose_minf())
 		return (0);
 	else if (x == compose_pinf())
