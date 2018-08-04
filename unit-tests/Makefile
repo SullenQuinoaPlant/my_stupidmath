@@ -70,6 +70,7 @@ $(UTEST_DIR)/%.test.o\
 $(UTEST_DIR)/%.test.c\
 $(LIBS_L)/$(LIBNAME).a
 	echo "test type 2"
+	echo "stem is $*"
 	$(CC) $(CFLAGS_UTEST)\
 		-I $(SRC_DIR)\
 		-I $(LIBS_I)\
