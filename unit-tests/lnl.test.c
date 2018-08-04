@@ -7,7 +7,7 @@
 
 #define MAX_ERROR 0.00001L
 
-#define ABS(x) ((x < 0) ? -1.0L * x : x)
+#define ABS(x) (x < 0 ? -x : x)
 	
 
 static
@@ -22,45 +22,47 @@ long double
 
 int	declare_tests_and_run(int all_of, char *these[])
 {
-	T(macro,
-		int		i = -2;
-
-		i = ABS(i);
-		printf("i is : %d\n", i);
-		assert_true(i == 2);
-
-		long double	d = -2.0L;
-
-		d = ABS(d);
-		printf("d is :%f\n", d);
-		assert_true(d == 2.0L);
-	)
-
-	T(letswatch,
+	T(error,
 		long double	x;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
-printf("m_d : %A\n", max_diff);
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ln_diff(x);
-			printf("diff is :%f\n", diff);
+			diff = ABS(ln_diff(x));
 			if (diff > max_diff)
-{
 				max_diff = diff;
-printf("m_d : %A\n", max_diff);
-}
-			else if (-1 * diff > max_diff)
-			{
-				max_diff = -diff;
-printf("m_d : %A\n", max_diff);
-			}
 		}
-printf("max_diff : %A, abs of :%lf\n", max_diff, ABS(max_diff));
-printf("%lf comp : %d : error : %lf\n", max_diff, (max_diff < MAX_ERROR), MAX_ERROR);
 		assert_true(max_diff < MAX_ERROR);
+	)
+	T(error01,
+		long double	x;
+		long double	diff;
+		long double	max_diff;
+
+		max_diff = 0;
+		for (x = 0.1L; x < 1; x += 0.1)
+		{
+			diff = ABS(ln_diff(x));
+			if (diff > max_diff)
+				max_diff = diff;
+		}
+		assert_true(max_diff < MAX_ERROR * 0.1L);
+	)
+	T(error001,
+		long double	x;
+		long double	diff;
+		long double	max_diff;
+
+		max_diff = 0;
+		for (x = 0.1L; x < 1; x += 0.1)
+		{
+			diff = ABS(ln_diff(x));
+			if (diff > max_diff)
+				max_diff = diff;
+		}
+		assert_true(max_diff < MAX_ERROR * 0.01L);
 	)
 	return (run_test_arr(all_of, these));
 }
