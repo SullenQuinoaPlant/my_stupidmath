@@ -16,10 +16,11 @@ CFLAGS_UTEST += $(CFLAGS_MORE) #$(CFLAGS) were annoying the hell out of me
 #BUILD TESTS
 
 .PHONY : build_tests
-build_tests :\
+build_tests\
+:\
 set_utest_flags def\
 test_prerequisites\
-$(TEST_OBJS)
+$(UTEST_DIR)/$(TEST_OBJS)
 
 .PHONY : set_utest_flags
 set_utest_flags :
@@ -44,11 +45,13 @@ cmocka :
 	fi
 	-@rm ./test.o
 
-$(UTEST_DIR)/math_ref.so :\
+$(UTEST_DIR)/math_ref.so\
+:\
 $(UTEST_DIR)/math_ref.c
 	gcc -shared -o $@ $< -lm
 
-$(UTEST_DIR)/%.test.o :\
+$(UTEST_DIR)/%.test.o\
+:\
 $(UTEST_DIR)/%.test.c \
 $(SRC_DIR)/%.c\
 	echo "test type 1"
@@ -63,7 +66,7 @@ $(SRC_DIR)/%.c\
 		-Wl,-rpath=$(UTEST_DIR)
 
 %.test.o : %.test.c $(LIBS_L)/$(LIBNAME).a
-	ech "test type 2"
+	echo "test type 2"
 	$(CC) $(CFLAGS_UTEST)\
 		-I $(SRC_DIR)\
 		-I $(LIBS_I)\
