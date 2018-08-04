@@ -3,6 +3,7 @@ os:
  - linux
 install:
  - INSTALL_HERE="$(pwd)/libs"
+ - make -C $INSTALL_HERE build_dependencies
  - LIBS_I="$INSTALL_HERE""/includes"
  - LIBS_L="$INSTALL_HERE""/objects"
 script:
