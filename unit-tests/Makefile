@@ -67,7 +67,7 @@ $(LIBS_L)/$(LIBNAME).a
 		-L $(LIBS_L)\
 		-lcmocka\
 		-l$(NAME) -lmyfloatingpoint -lft\
-		math_ref.so\
+		$(UTEST_DIR)/math_ref.so\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
 		-Wl,-rpath=$(UTEST_DIR)
