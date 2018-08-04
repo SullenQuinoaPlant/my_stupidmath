@@ -20,7 +20,7 @@ build_tests\
 :\
 set_utest_flags def\
 test_prerequisites\
-$(UTEST_DIR)/$(TEST_OBJS)
+$(TEST_OBJS)
 
 
 .PHONY : set_utest_flags
