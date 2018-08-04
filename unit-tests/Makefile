@@ -65,22 +65,22 @@ $(LIBS_L)/$(LIBNAME).a\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
 		-Wl,-rpath=$(UTEST_DIR)
 
-$(UTEST_DIR)/%.test.o\
-:\
-$(UTEST_DIR)/%.test.c\
-$(LIBS_L)/$(LIBNAME).a
-	echo "test type 2"
-	echo "stem is $*"
-	$(CC) $(CFLAGS_UTEST)\
-		-I $(SRC_DIR)\
-		-I $(LIBS_I)\
-		-D $(ARCH)\
-		$<\
-		-L $(LIBS_L)\
-		-l$(NAME)\
-		-lcmocka -lmyfloatingpoint -lft\
-		-o $@\
-		-Wl,-rpath=$$(readlink -e $(LIBS_L))
+#$(UTEST_DIR)/%.test.o\
+#:\
+#$(UTEST_DIR)/%.test.c\
+#$(LIBS_L)/$(LIBNAME).a
+#	echo "test type 2"
+#	echo "stem is $*"
+#	$(CC) $(CFLAGS_UTEST)\
+#		-I $(SRC_DIR)\
+#		-I $(LIBS_I)\
+#		-D $(ARCH)\
+#		$<\
+#		-L $(LIBS_L)\
+#		-l$(NAME)\
+#		-lcmocka -lmyfloatingpoint -lft\
+#		-o $@\
+#		-Wl,-rpath=$$(readlink -e $(LIBS_L))
 
 %.test.c : $(UTEST_DIR)/cmocka/my_macro_overlay.h
 	@:
