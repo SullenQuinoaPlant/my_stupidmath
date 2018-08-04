@@ -13,136 +13,136 @@
 static
 long double
 	powl_diff(
-		long double x)
+		long double x, long double y)
 {
-	long double	ref = lm_powl(x);
-	long double tst = powl(x);
+	long double	ref = lm_powl(x, y);
+	long double tst = powl(x, y);
 	return (tst - ref);
 }
 
 int	declare_tests_and_run(int all_of, char *these[])
 {
 	T(error,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR);
 	)
 	T(error01,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR * 0.1L);
 	)
 	T(error001,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR * 0.01L);
 	)
 	T(bigger,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 10.0L; x < 1000000000000; x *= 10)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR);
 	)
 	T(bigger01,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 10.0L; x < 1000000000000; x *= 10)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR * 0.1L);
 	)
 	T(bigger001,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 10.0L; x < 1000000000000; x *= 10)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR * 0.01L);
 	)
 	T(weirder,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 0.1L; x < 11000000000000; x *= 10.12)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR);
 	)
 	T(weirder01,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 0.1L; x < 11000000000000; x *= 10.12)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR * 0.1L);
 	)
 	T(weirder001,
-		long double	x;
+		long double	x, y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
 		max_diff = 0;
 		for (x = 0.1L; x < 11000000000000; x *= 10.12)
 		{
-			diff = ABS(powl_diff(x));
+			diff = ABS(powl_diff(x, y)));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
