@@ -23,7 +23,8 @@ long double
 int	declare_tests_and_run(int all_of, char *these[])
 {
 	T(error,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -37,7 +38,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR);
 	)
 	T(error01,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -51,7 +53,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR * 0.1L);
 	)
 	T(error001,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -65,7 +68,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR * 0.01L);
 	)
 	T(bigger,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -79,7 +83,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR);
 	)
 	T(bigger01,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -93,7 +98,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR * 0.1L);
 	)
 	T(bigger001,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -107,7 +113,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR * 0.01L);
 	)
 	T(weirder,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -121,7 +128,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR);
 	)
 	T(weirder01,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
@@ -135,7 +143,8 @@ int	declare_tests_and_run(int all_of, char *these[])
 		assert_true(max_diff < MAX_ERROR * 0.1L);
 	)
 	T(weirder001,
-		long double	x, y = 1.5;
+		long double	x;
+		long double	y = 1.5;
 		long double	diff;
 		long double	max_diff;
 
