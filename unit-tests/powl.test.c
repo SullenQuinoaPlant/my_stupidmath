@@ -30,7 +30,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -44,7 +44,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -58,7 +58,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 0.1L; x < 1; x += 0.1)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -72,7 +72,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 10.0L; x < 1000000000000; x *= 10)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -86,7 +86,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 10.0L; x < 1000000000000; x *= 10)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -100,7 +100,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 10.0L; x < 1000000000000; x *= 10)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -114,7 +114,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 0.1L; x < 11000000000000; x *= 10.12)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -128,7 +128,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 0.1L; x < 11000000000000; x *= 10.12)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
@@ -142,7 +142,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		max_diff = 0;
 		for (x = 0.1L; x < 11000000000000; x *= 10.12)
 		{
-			diff = ABS(powl_diff(x, y)));
+			diff = ABS(powl_diff(x, y));
 			if (diff > max_diff)
 				max_diff = diff;
 		}
