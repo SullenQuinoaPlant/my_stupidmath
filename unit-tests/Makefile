@@ -69,7 +69,7 @@ $(UTEST_DIR)/math_ref.o\
 :\
 $(UTEST_DIR)/math_ref.c
 	$(CC) $(CFLAGS_UTEST) $< -lm -o $@\
-		-wl,-r
+		-Wl,-r
 
 %.test.c : $(UTEST_DIR)/cmocka/my_macro_overlay.h
 	@:
