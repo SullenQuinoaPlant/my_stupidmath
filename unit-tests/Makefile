@@ -52,7 +52,8 @@ $(UTEST_DIR)/math_ref.c
 
 $(UTEST_DIR)/%.test.o\
 :\
-$(UTEST_DIR)/%.test.c \
+$(UTEST_DIR)/%.test.c\
+$(LIBS_L)/$(LIBNAME).a\
 $(SRC_DIR)/%.c\
 	echo "test type 1"
 	$(CC) $(CFLAGS_UTEST)\
