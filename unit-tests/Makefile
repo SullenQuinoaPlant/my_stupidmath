@@ -39,7 +39,7 @@ cmocka :
 	-@rm ./test.o
 
 $(UTEST_DIR)/%.test.o \
- \
+:\
 $(UTEST_DIR)/%.test.c \
 $(SRC_DIR)/%.c\
 $(UTEST_DIR)/math_ref.o
