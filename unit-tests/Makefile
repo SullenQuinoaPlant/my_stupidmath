@@ -22,12 +22,15 @@ set_utest_flags def\
 test_prerequisites\
 $(UTEST_DIR)/$(TEST_OBJS)
 
+
 .PHONY : set_utest_flags
 set_utest_flags :
 	$(eval CFLAGS += $(CFLAGS_UTEST))
 
+
 .PHONY : test_prerequisites
 test_prerequisites : cmocka $(UTEST_DIR)/math_ref.so
+
 
 .PHONY : cmocka
 cmocka : 
@@ -45,30 +48,31 @@ cmocka :
 	fi
 	-@rm ./test.o
 
+
 $(UTEST_DIR)/math_ref.so\
 :\
 $(UTEST_DIR)/math_ref.c
 	gcc -shared -o $@ $< -lm
 
+
 $(UTEST_DIR)/%.test.o\
 :\
 $(UTEST_DIR)/%.test.c\
 $(LIBS_L)/$(LIBNAME).a
-	echo "test type 1"
 	$(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -I $(SRC_DIR)\
 		$<\
 		-L $(LIBS_L)\
 		-lcmocka\
 		-l$(NAME) -lmyfloatingpoint -lft\
+		math_ref.so\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
 		-Wl,-rpath=$(UTEST_DIR)
 
+
 %.test.c : $(UTEST_DIR)/cmocka/my_macro_overlay.h
 	@:
-
-
 
 
 
