@@ -1,5 +1,6 @@
 NAME = mystupidmath
 LIBNAME = libmystupidmath
+GIT_REPO = https://github.com/SullenQuinoaPlant/my_stupidmath.git
 
 CALL_DIR := $(shell pwd)
 SRC_DIR	:= $(ROOT)/sources
