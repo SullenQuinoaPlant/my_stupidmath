@@ -1,6 +1,6 @@
 #include "inner.h"
 
-int		my_flog2(uintmax_t x)
+int		flog2(uintmax_t x)
 {
 	int		i;
 
