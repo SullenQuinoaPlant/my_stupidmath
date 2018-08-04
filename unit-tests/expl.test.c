@@ -2,7 +2,7 @@
 #define HOW_MANY_TESTS 10
 #include "cmocka/my_overlay.h"
 
-#include <math.h>
+#include "math_ref.h"
 #include "mystupidmath.h"
 
 #define MAX_ERROR 0.00001L
@@ -15,8 +15,8 @@ long double
 	exp_diff(
 		long double x)
 {
-	long double	ref = logl(x);
-	long double tst = lnl(x);
+	long double	ref = lm_expl(x);
+	long double tst = expl(x);
 	return (tst - ref);
 }
 

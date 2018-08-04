@@ -38,19 +38,23 @@ cmocka :
 	fi
 	-@rm ./test.o
 
-%.test.o $(UTEST_DIR)/%.test.o : $(UTEST_DIR)/%.test.c $(SRC_DIR)/%.c
-	echo "$(LIBS_I)"
+$(UTEST_DIR)/%.test.o \
+ \
+$(UTEST_DIR)/%.test.c \
+$(SRC_DIR)/%.c\
+$(UTEST_DIR)/math_ref.o
+	echo "test type 1"
 	$(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -I $(SRC_DIR)\
 		$<\
 		-L $(LIBS_L)\
 		-lcmocka\
 		-l$(NAME) -lmyfloatingpoint -lft\
-		-lm\
+		$(UTEST_DIR)/math_ref.o\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))
 
-%.test.o : %.test.c $(UTEST_DIR)/printf_diff.c $(LIBS_L)/$(LIBNAME).a
+%.test.o : %.test.c $(LIBS_L)/$(LIBNAME).a
 	$(CC) $(CFLAGS_UTEST)\
 		-I $(SRC_DIR)\
 		-I $(LIBS_I)\
@@ -61,6 +65,11 @@ cmocka :
 		-lcmocka -lmyfloatingpoint -lft\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))
+
+$(UTEST_DIR)/math_ref.o\
+:\
+$(UTEST_DIR)/math_ref.c
+	$(CC) $(CFLAGS_UTEST) $< -o $@
 
 %.test.c : $(UTEST_DIR)/cmocka/my_macro_overlay.h
 	@:
