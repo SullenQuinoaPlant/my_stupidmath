@@ -52,7 +52,9 @@ cmocka :
 $(UTEST_DIR)/math_ref.so\
 :\
 $(UTEST_DIR)/math_ref.c
-	gcc -shared -o $@ $< -lm
+	gcc -c -fPIC $< -o tmp.o &&\
+	gcc -shared -o $@ tmp.o -lm
+	-rm tmp.o
 
 
 $(UTEST_DIR)/%.test.o\
