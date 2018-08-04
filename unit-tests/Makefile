@@ -73,7 +73,7 @@ $(SRC_DIR)/%.c\
 		-D $(ARCH)\
 		$<\
 		-L $(LIBS_L)\
-		-l $(LIBNAME).a\
+		-l$(NAME)\
 		-lcmocka -lmyfloatingpoint -lft\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))
