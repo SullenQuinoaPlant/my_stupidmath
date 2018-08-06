@@ -21,6 +21,10 @@ long double
 
 int	declare_tests_and_run(int all_of, char *these[])
 {
+	T(testtest,
+		if (&lm_powl == &powl)
+			fail();
+	)
 	T(error,
 		long double	x;
 		long double	y = 1.5;
@@ -166,6 +170,12 @@ int	declare_tests_and_run(int all_of, char *these[])
 		long double	diff;
 
 		diff = ABS(powl_diff(10, 0.96488972683081529815862786847446841));
+		assert_true(diff < MAX_ERROR);
+	)
+	T(test3,
+		long double	diff;
+
+		diff = ABS(powl_diff(10.1, -0.96488972683081529815862786847446841));
 		assert_true(diff < MAX_ERROR);
 	)
 	return (run_test_arr(all_of, these));

@@ -70,7 +70,7 @@ $(LIBS_L)/$(LIBNAME).a
 		$(UTEST_DIR)/math_ref.so\
 		-o $@\
 		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
-		-Wl,-rpath=$(UTEST_DIR)
+		-Wl,-rpath=$$(readlink -f $(UTEST_DIR))
 
 
 %.test.c : $(UTEST_DIR)/cmocka/my_macro_overlay.h
