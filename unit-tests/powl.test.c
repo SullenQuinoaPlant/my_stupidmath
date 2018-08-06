@@ -1,4 +1,3 @@
-#include <stdio.h>
 #define HOW_MANY_TESTS 10
 #include "cmocka/my_overlay.h"
 
@@ -156,6 +155,18 @@ int	declare_tests_and_run(int all_of, char *these[])
 				max_diff = diff;
 		}
 		assert_true(max_diff < MAX_ERROR * 0.01L);
+	)
+	T(test1,
+		long double	diff;
+
+		diff = ABS(powl_diff(10, -0.96488972683081529815862786847446841));
+		assert_true(diff < MAX_ERROR);
+	)
+	T(test2,
+		long double	diff;
+
+		diff = ABS(powl_diff(10, 0.96488972683081529815862786847446841));
+		assert_true(diff < MAX_ERROR);
 	)
 	return (run_test_arr(all_of, these));
 }
