@@ -36,6 +36,13 @@ libmyfloatingpoint :
 
 .PHONY : clean-*
 clean-% :
-	-rm $(LIBS_DIR)/$*
+	-rm $(LIB_DIR)/$*
 	-rm $(LIBS_I)/$*.h
 	-rm $(LIBS_L)/$*.a
+
+CLEAN_ALL_LIBS := $(patsubst %,clean-%, $(DEPENDENCIES))
+.PHONY : clean-libs
+clean-libs : $(CLEAN_ALL_LIBS)
+
+.PHONY : libs_re
+libs_re : clean-libs build_dependencies

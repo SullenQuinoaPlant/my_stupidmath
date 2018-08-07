@@ -16,7 +16,7 @@ long double
 		long double x)
 {
 	long double	ref = lm_expl(x);
-	long double tst = expl(x);
+	long double tst = my_expl(x);
 	return (tst - ref);
 }
 
