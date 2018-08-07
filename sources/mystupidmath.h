@@ -10,37 +10,35 @@
 
 /*mathematical constants :*/
 
-# ifndef M_E
-#  define M_El 2.718281828459045235360287471352662498L
-#  define M_LN2l 0.693147180559945309417232121458176568L
-#  define M_LN10l 2.302585092994045684017991454684364208L
-# endif
+# define M_El 2.718281828459045235360287471352662498L
+# define M_LN2l 0.693147180559945309417232121458176568L
+# define M_LN10l 2.302585092994045684017991454684364208L
 
 
 /*functions :*/
 
 long double
-	expl(
+	my_expl(
 		long double x);
 
 int
-	flog2(
+	my_flog2(
 		uintmax_t);
 
 long double
-	intpowl(
+	my_intpowl(
 		long double x, intmax_t n);
 
 long double
-	lnl(
+	my_lnl(
 		long double x);
 
 long double
-	powl(
+	my_powl(
 		long double x, long double y);
 
 long double
-	uintpowl(
+	my_uintpowl(
 		long double x, uintmax_t n);
 
 #endif

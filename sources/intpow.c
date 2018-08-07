@@ -1,7 +1,7 @@
 #include "inner.h"
 
 long double
-	intpowl(
+	my_intpowl(
 		long double x, intmax_t n)
 {
 	if (n < 0)
@@ -23,7 +23,7 @@ void
 }
 
 long double
-	uintpowl(
+	my_uintpowl(
 		long double x, uintmax_t n)
 {
 	long double	ret;

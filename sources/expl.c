@@ -33,7 +33,7 @@ long double
 }
 
 long double
-	expl(
+	my_expl(
 		long double x)
 {
 	if (x == compose_minf())
