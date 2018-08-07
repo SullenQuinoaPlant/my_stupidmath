@@ -8,12 +8,12 @@ OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 
 all : $(OUT_DIR_LIB)/$(LIBNAME).a
 
-$(OUT_DIR_LIB)/$(LIBNAME).a : $(OBJ_DIR)/$(NAME).o
-	-ar rcs $@ $<
+$(OUT_DIR_LIB)/$(LIBNAME).a : $(OBJS)
+	-ar rcs $@ $^
 	cp $(SRC_DIR)/$(NAME).h $(OUT_DIR_H)/$(LIBNAME).h
 
-$(OBJ_DIR)/$(NAME).o : $(OBJS)
-	ld -r $^ -o $@
+#$(OBJ_DIR)/$(NAME).o : $(OBJS)
+#	ld -r $^ -o $@
 
 #specifc file dependencies:
 
