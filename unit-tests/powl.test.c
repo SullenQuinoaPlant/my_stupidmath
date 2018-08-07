@@ -15,16 +15,12 @@ long double
 		long double x, long double y)
 {
 	long double	ref = lm_powl(x, y);
-	long double tst = powl(x, y);
+	long double tst = my_powl(x, y);
 	return (tst - ref);
 }
 
 int	declare_tests_and_run(int all_of, char *these[])
 {
-	T(testtest,
-		if (&lm_powl == &powl)
-			fail();
-	)
 	T(error,
 		long double	x;
 		long double	y = 1.5;

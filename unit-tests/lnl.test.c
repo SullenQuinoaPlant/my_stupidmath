@@ -16,7 +16,7 @@ long double
 		long double x)
 {
 	long double	ref = lm_logl(x);
-	long double tst = lnl(x);
+	long double tst = my_lnl(x);
 	return (tst - ref);
 }
 
