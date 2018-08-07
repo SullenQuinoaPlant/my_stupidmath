@@ -1,8 +1,8 @@
 #include "inner.h"
 
 long double
-	powl(
+	my_powl(
 		long double x, long double y)
 {
-	return (expl(y * lnl(x)));
+	return (my_expl(y * my_lnl(x)));
 }

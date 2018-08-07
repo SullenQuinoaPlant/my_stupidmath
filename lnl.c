@@ -58,7 +58,7 @@ long double
 }
 
 long double
-	lnl(
+	my_lnl(
 		long double x)
 {
 	t_s_iaf	split;

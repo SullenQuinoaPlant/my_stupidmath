@@ -12,12 +12,12 @@ void
 		int rank, long double delta_pow,
 		t_u_ata delta_ret)
 {
-	if (!(rank <= SERIES_DEPTH))
-		*delta_ret.acc = 1;
-	else
+	if (rank <= SERIES_DEPTH)
+	{
 		rec(rank + 1, delta_pow * *delta_ret.arg, delta_ret);
-	*delta_ret.acc += delta_pow;
-	*delta_ret.acc /= rank;
+		*delta_ret.acc += delta_pow;
+		*delta_ret.acc /= rank;
+	}
 }
 
 static
@@ -29,11 +29,12 @@ long double
 
 	ret = x;
 	rec(1, ret, (t_u_ata){&ret});
+	ret++;
 	return (ret);
 }
 
 long double
-	expl(
+	my_expl(
 		long double x)
 {
 	if (x == compose_minf())
