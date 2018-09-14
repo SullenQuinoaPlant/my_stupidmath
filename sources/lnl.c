@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 12:27:41 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 12:52:53 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/14 13:00:30 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ long double								my_lnl(
 	else if (x == compose_pinf())
 		return (compose_pinf());
 	split = split_x(x);
-	return (M_LN2l * split.i + series(split.f));
+	return (M_LN2L * split.i + series(split.f));
 }
