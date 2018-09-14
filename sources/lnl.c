@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 12:27:41 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 12:29:43 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/14 12:52:53 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 static t_s_iaf							split_x(
 	long double x)
 {
-	t_s_iaf	ret;
-	t_s_dfp	dec;
+	t_s_iaf		ret;
+	t_s_dfp		dec;
 	long double	const big = 1.9375L;
 
 	decompose_ldouble(&x, &dec);
