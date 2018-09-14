@@ -1,8 +1,8 @@
-NAME = mystupidmath
+ AME = mystupidmath
 LIBNAME = libmystupidmath
 
 CALL_DIR := $(shell pwd)
-SRC_DIR	:= $(ROOT)/
+SRC_DIR := $(ROOT)/
 OBJ_DIR := $(ROOT)/
 LIB_DIR := $(ROOT)/
 LIBS_I := $(LIB_DIR)/
