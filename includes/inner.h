@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 12:53:26 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 12:53:27 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/14 13:40:31 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,20 @@
 # include "libmyfloatingpoint.h"
 # include "mystupidmath.h"
 
-typedef struct	s_int_and_float {
+typedef struct	s_int_and_float
+{
 	intmax_t	i;
 	long double	f;
 }				t_s_iaf;
 
-typedef struct	s_float_and_float {
+typedef struct	s_float_and_float
+{
 	long double	f1;
 	long double f2;
 }				t_s_faf;
 
-typedef union	u_arg_then_acc {
+typedef union	u_arg_then_acc
+{
 	long double *arg;
 	long double	*acc;
 }				t_u_ata;
