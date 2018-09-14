@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lnl.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/09/14 12:27:41 by nmauvari          #+#    #+#             */
+/*   Updated: 2018/09/14 12:29:43 by nmauvari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "inner.h"
 
-/*big is used to avoid least good approximations
+/*
+**big is used to avoid least good approximations
 **near x=2; Not sure it's worth it considering 
-**the loss of precision.*/
-static
-t_s_iaf
-	split_x(
-		long double x)
+**the loss of precision.
+*/
+
+static t_s_iaf							split_x(
+	long double x)
 {
 	t_s_iaf	ret;
 	t_s_dfp	dec;
@@ -29,11 +42,10 @@ t_s_iaf
 # define SERIES_DEPTH 100
 #endif
 
-static
-void
-	rec(
-		int rank, long double delta_pow,
-		t_u_ata delta_ret)
+static void								rec(
+	int rank,
+	long double delta_pow,
+	t_u_ata delta_ret)
 {
 	if (!(rank <= SERIES_DEPTH))
 		*delta_ret.acc = 0;
@@ -45,10 +57,9 @@ void
 		*delta_ret.acc -= (delta_pow / rank);
 }
 
-static
-long double
-	series(
-		long double xx)
+
+stati clong double						series(
+	long double xx)
 {
 	long double	ret;
 
@@ -57,9 +68,8 @@ long double
 	return (ret);
 }
 
-long double
-	my_lnl(
-		long double x)
+long double								my_lnl(
+	long double x)
 {
 	t_s_iaf	split;
 
