@@ -12,14 +12,14 @@ LIBS_I := $(LIB_DIR)/includes
 OUT_DIR_LIB := $(LIBS_L)
 OUT_DIR_H := $(LIBS_I)
 
-include $(SRC_DIR)/targets.mk
+include $(ROOT)/targets.mk
 
 DEPENDENCIES = libmyfloatingpoint libft
 
 CC := gcc
 CFLAGS_MORE =
 ifndef CFLAGS
-	CFLAGS := -Wall -Wextra -Werror
+	CFLAGS := -Wall -Wextra -Werror -I $(INC_DIR)
 endif
 CFLAGS += $(CFLAGS_MORE)
 

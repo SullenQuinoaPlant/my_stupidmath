@@ -8,13 +8,13 @@ OBJ_DIR := $(ROOT)/
 LIB_DIR := $(ROOT)/
 LIBS_I := $(LIB_DIR)/includes
 OUT_DIR_LIB := $(ROOT)/
-OUT_DIR_H := $(ROOT)/
+OUT_DIR_H := $(ROOT)/includes
 
 include $(SRC_DIR)/targets.mk
 
 CC := gcc
 CFLAGS_MORE =
 ifndef CFLAGS
-	CFLAGS := -Wall -Wextra -Werror
+	CFLAGS := -Wall -Wextra -Werror -I $(INC_DIR)
 endif
 CFLAGS += $(CFLAGS_MORE)
