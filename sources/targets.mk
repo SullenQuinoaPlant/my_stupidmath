@@ -1,6 +1,6 @@
 TARGETS := \
-	expl \
-	flog2 \
-	intpow \
-	lnl \
-	powl
+texpl \
+tflog2 \
+tintpow \
+tlnl \
+tpowl
