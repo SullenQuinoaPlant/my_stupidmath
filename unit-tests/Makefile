@@ -34,11 +34,13 @@ test_prerequisites : cmocka $(UTEST_DIR)/math_ref.so
 
 .PHONY : cmocka
 cmocka : 
-	@if $(CC) $(CFLAGS_UTEST)\
+	if $(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -L $(LIBS_L)\
 	 	$(UTEST_DIR)/cmocka/check_install.c\
-		-lcmocka -o test.o\
-		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
+#		$(LIBS_L)/libcmocka_shared.dylib\
+		-lcmocka\
+		-o test.o\
+		-Wl,-rpath,"$(LIBS_L)"\
 		&& ./test.o .;\
 	then\
 		echo "cmocka already installed";\
@@ -69,8 +71,8 @@ $(LIBS_L)/$(LIBNAME).a
 		-l$(NAME) -lmyfloatingpoint -lft\
 		$(UTEST_DIR)/math_ref.so\
 		-o $@\
-		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
-		-Wl,-rpath=$$(readlink -f $(UTEST_DIR))
+		-Wl,-rpath=$(LIBS_L)\
+		-Wl,-rpath=$(UTEST_DIR)
 
 
 %.test.c : $(UTEST_DIR)/cmocka/my_macro_overlay.h
