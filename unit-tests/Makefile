@@ -32,15 +32,15 @@ set_utest_flags :
 test_prerequisites : cmocka $(UTEST_DIR)/math_ref.so
 
 
+#		-lcmocka\
+#		$(LIBS_L)/libcmocka_shared.dylib\
 .PHONY : cmocka
 cmocka : 
 	if $(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -L $(LIBS_L)\
-	 	$(UTEST_DIR)/cmocka/check_install.c\
-#		$(LIBS_L)/libcmocka_shared.dylib\
 		-lcmocka\
 		-o test.o\
-		-Wl,-rpath,"$(LIBS_L)"\
+		-Wl,-rpath="$(LIBS_L)"\
 		&& ./test.o .;\
 	then\
 		echo "cmocka already installed";\
@@ -64,7 +64,7 @@ $(UTEST_DIR)/%.test.o\
 $(UTEST_DIR)/%.test.c\
 $(LIBS_L)/$(LIBNAME).a
 	$(CC) $(CFLAGS_UTEST)\
-		-I $(LIBS_I) -I $(SRC_DIR)\
+		-I $(LIBS_I) -I $(SRC_DIR) -I $(INC_DIR)\
 		$<\
 		-L $(LIBS_L)\
 		-lcmocka\
@@ -92,8 +92,6 @@ run_tests : $(EXECUTION_STAMPS)
 %.execution.stamp : %.o
 	-./$*.o "$(UTEST_DIR)" \
 	&& touch $@
-#argument used to be
-#	"$$(readlink -e $(UTEST_DIR))" \
 
 
 
