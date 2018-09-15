@@ -49,9 +49,9 @@ $(ROOT)/$(RELEASE_DIR) :
 	mkdir $@/sources
 	cp -r $(SRC_DIR)/*.c $@/sources/
 	mkdir $@/includes
-	cp -r $(ROOT)/*.h $@/includes
+	cp -r $(INC_DIR)/*.h $@/includes
 	cp $(patsubst %,$(LIBS_I)/%.h,$(DEPENDENCIES)) $@/includes
-	cp core.mk $@/Makefile
+	cp $(ROOT)/core.mk $@/Makefile
 	cp $(ROOT)/targets.mk $@/make_vars.mk
 	cat make_vars_release.mk >> $@/make_vars.mk
 	cd $@ && \
