@@ -14,16 +14,19 @@ define BUILD_LIB
 	cp $@/includes/$@.h $(LIBS_I)
 endef
 
-libft :
+.PHONY : libft
+libft : $(LIB_DIR)/libft
+$(LIB_DIR)/libft
 	git clone \
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/Libft.git \
 		--depth 1 \
-		$(LIB_DIR)/$@/
+		$@/
 	$(BUILD_LIB)
 
-
-libmyfloatingpoint :
+.PHONY : libmyfloatingpoint
+libmyfloatingpoint : $(LIB_DIR)/libmyfloatingpoint
+$(LIB_DIR)/libmyfloatingpoint :
 	git clone \
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
