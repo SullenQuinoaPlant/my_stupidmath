@@ -11,7 +11,7 @@ all : $(OUT_DIR_LIB)/$(LIBNAME).a header
 .PHONY : header
 header : $(OUT_DIR_H)/$(LIBNAME).h
 $(OUT_DIR_H)/$(LIBNAME).h :
-	sed -e '13,14%s@\(MYSTUPIDMATH_H\)@LIB\1@' $(SRC_DIR)/$(NAME).h >\
+	sed -e '13,14s@\(MYSTUPIDMATH_H\)@LIB\1@' $(SRC_DIR)/$(NAME).h >\
 		$(OUT_DIR_H)/$(LIBNAME).h
 
 $(OUT_DIR_LIB)/$(LIBNAME).a : $(OBJS)

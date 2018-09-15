@@ -16,8 +16,8 @@ include $(ROOT)/targets.mk
 
 DEPENDENCIES = libmyfloatingpoint
 
-CC := gcc-8.2.0
-#CC := gcc
+#CC := gcc-8.2.0
+CC := gcc
 CFLAGS_MORE =
 ifndef CFLAGS
 	CFLAGS := -Wall -Wextra -Werror -I $(INC_DIR)
