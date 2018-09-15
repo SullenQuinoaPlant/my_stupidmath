@@ -32,14 +32,12 @@ set_utest_flags :
 test_prerequisites : cmocka $(UTEST_DIR)/math_ref.so
 
 
-#		-lcmocka\
-#		$(LIBS_L)/libcmocka_shared.dylib\
 .PHONY : cmocka
 cmocka : 
 	if $(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -L $(LIBS_L)\
-		-lcmocka\
 		-o test.o\
+		-lcmocka\
 		-Wl,-rpath="$(LIBS_L)"\
 		&& ./test.o .;\
 	then\

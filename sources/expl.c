@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 12:09:11 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 12:26:29 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/15 07:53:34 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,22 @@
 #else
 # define SERIES_DEPTH 100
 #endif
+
+/*
+static void					rec(
+	int rank,
+	long double acc,
+	t_u_ata delta_ret)
+{
+	if (acc)
+	{
+		rec(rank + 1, acc * *delta_ret.arg / rank, delta_ret);
+		*delta_ret.acc += acc;
+	}
+	else
+		delta_ret.acc = 0;
+}
+*/
 
 static void					rec(
 	int rank,
