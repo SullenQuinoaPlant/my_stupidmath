@@ -13,13 +13,13 @@ define BUILD_LIB
 	cp $@/$@.a $(LIBS_L)
 	cp $@/includes/$@.h $(LIBS_I)
 endef
-	
+
 libft :
 	git clone \
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/Libft.git \
 		--depth 1 \
-		$@/
+		$(LIB_DIR)/$@/
 	$(BUILD_LIB)
 
 
@@ -28,7 +28,7 @@ libmyfloatingpoint :
 		--single-branch \
 		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
 		--depth 1 \
-		$@/
+		$(LIB_DIR)/$@/
 	$(BUILD_LIB)
 
 
