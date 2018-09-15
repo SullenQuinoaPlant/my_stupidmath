@@ -6,7 +6,10 @@ endif
 BUILD_DIR = cmocka_build
 SOURCE_DIR = cmocka_source
 
-cmocka : $(BUILD_DIR) $(SOURCE_DIR) build_cmocka
+cmocka : $(BUILD_DIR) $(SOURCE_DIR) build_cmocka pull_cmocka_files
+
+.PHONY : pull_cmocka_files 
+pull_cmocka_files :
 	cp $(BUILD_DIR)/src/libcmocka* $(LIBS_L)/
 	cp $(SOURCE_DIR)/include/cmocka.h $(LIBS_I)/
 
