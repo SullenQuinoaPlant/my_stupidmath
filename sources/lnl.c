@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 12:27:41 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 13:00:30 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/15 06:04:21 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void								rec(
 }
 
 
-stati clong double						series(
+static long double						series(
 	long double xx)
 {
 	long double	ret;
