@@ -18,7 +18,6 @@ $(OUT_DIR_LIB)/$(LIBNAME).a : $(OBJS)
 #specifc file dependencies:
 
 
-
 #compilation :
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c #| objdir
 	$(CC) $(CFLAGS)\
