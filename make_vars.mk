@@ -4,7 +4,7 @@ TARGETS := \
 	intpow \
 	lnl \
 	powl
- AME = mystupidmath
+NAME = mystupidmath
 LIBNAME = libmystupidmath
 
 CALL_DIR := $(shell pwd)
@@ -15,8 +15,6 @@ LIB_DIR := $(ROOT)/
 LIBS_I := $(LIB_DIR)/includes
 OUT_DIR_LIB := $(ROOT)/
 OUT_DIR_H := $(ROOT)/includes
-
-include $(SRC_DIR)/targets.mk
 
 CC := gcc
 CFLAGS_MORE =
