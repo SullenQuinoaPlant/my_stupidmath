@@ -17,7 +17,7 @@ endef
 libft :
 	git clone \
 		--single-branch \
-		-b the_lib https://github.com/SullenQuinoaPlant/Libft.git \
+		-b release https://github.com/SullenQuinoaPlant/Libft.git \
 		--depth 1 \
 		$@/
 	$(BUILD_LIB)
