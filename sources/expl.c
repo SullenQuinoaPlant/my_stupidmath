@@ -18,22 +18,26 @@
 # define SERIES_DEPTH 100
 #endif
 
-/*
+///*
 static void					rec(
 	int rank,
 	long double acc,
 	t_u_ata delta_ret)
 {
+	long double	nxt_acc;
+
 	if (acc)
 	{
-		rec(rank + 1, acc * *delta_ret.arg / rank, delta_ret);
+		nxt_acc = acc * *delta_ret.arg / (long double)(++rank);
+		rec(rank, nxt_acc, delta_ret);
 		*delta_ret.acc += acc;
 	}
 	else
 		delta_ret.acc = 0;
 }
-*/
+//*/
 
+/*
 static void					rec(
 	int rank,
 	long double delta_pow,
@@ -48,6 +52,7 @@ static void					rec(
 	else
 		delta_ret.acc = 0;
 }
+//*/
 
 static long double			series(
 		long double x)
@@ -55,8 +60,8 @@ static long double			series(
 	long double	ret;
 
 	ret = x;
-	rec(1, ret, (t_u_ata){&ret});
-	ret += (x + 1.0);
+	rec(1, x, (t_u_ata){&ret});
+	ret += (1.0L - x);
 	return (ret);
 }
 

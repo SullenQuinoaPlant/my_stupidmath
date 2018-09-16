@@ -42,6 +42,7 @@ static t_s_iaf							split_x(
 # define SERIES_DEPTH 100
 #endif
 
+/*
 static void								rec(
 	int rank,
 	long double delta_pow,
@@ -56,7 +57,22 @@ static void								rec(
 	else
 		*delta_ret.acc -= (delta_pow / rank);
 }
+//*/
 
+static void								rec(
+	int rank,
+	long double delta,
+	t_u_ata delta_ret)
+{
+	long double	tmp;
+
+	delta *= *delta_ret.arg;
+	if ((tmp = delta / (long double)rank))
+		rec(rank + 1, delta, delta_ret);
+	else
+		*delta_ret.acc = 0;
+	*delta_ret.acc += rank & 1 ? tmp : -tmp;
+}
 
 static long double						series(
 	long double xx)
@@ -64,7 +80,7 @@ static long double						series(
 	long double	ret;
 
 	ret = xx - 1;
-	rec(1, ret, (t_u_ata){&ret});
+	rec(1, 1.0, (t_u_ata){&ret});
 	return (ret);
 }
 

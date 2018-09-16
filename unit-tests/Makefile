@@ -45,6 +45,7 @@ test_prerequisites : cmocka $(UTEST_DIR)/math_ref.so
 cmocka : 
 	if $(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -L $(LIBS_L)\
+		$(UTEST_DIR)/cmocka/check_install.c\
 		-o test.o\
 		-lcmocka_shared\
 		-Wl,-rpath="$(LIBS_L)"\
