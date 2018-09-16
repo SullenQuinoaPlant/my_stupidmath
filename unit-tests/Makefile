@@ -10,6 +10,12 @@ EXECUTION_STAMPS := $(TEST_OBJS:.o=.execution.stamp)
 CFLAGS_UTEST = -fno-builtin -g
 CFLAGS_UTEST += $(CFLAGS_MORE) #$(CFLAGS) were annoying the hell out of me
 
+TEST_DEPENDENCIES = libft
+
+
+
+.PHONY : tests_all 
+tests_all : build_test_dependencies clean-tests tests
 
 
 ############
@@ -18,10 +24,13 @@ CFLAGS_UTEST += $(CFLAGS_MORE) #$(CFLAGS) were annoying the hell out of me
 .PHONY : build_tests
 build_tests\
 :\
+build_test_dependencies\
 set_utest_flags def\
-test_prerequisites\
+\
 $(TEST_OBJS)
 
+.PHONY : build_test_dependencies
+build_test_dependencies : $(TEST_DEPENDENCIES) test_prerequisites
 
 .PHONY : set_utest_flags
 set_utest_flags :
@@ -37,7 +46,7 @@ cmocka :
 	if $(CC) $(CFLAGS_UTEST)\
 		-I $(LIBS_I) -L $(LIBS_L)\
 		-o test.o\
-		-lcmocka\
+		-lcmocka_shared\
 		-Wl,-rpath="$(LIBS_L)"\
 		&& ./test.o .;\
 	then\
@@ -65,7 +74,7 @@ $(LIBS_L)/$(LIBNAME).a
 		-I $(LIBS_I) -I $(SRC_DIR) -I $(INC_DIR)\
 		$<\
 		-L $(LIBS_L)\
-		-lcmocka\
+		-lcmocka_shared\
 		-l$(NAME) -lmyfloatingpoint -lft\
 		$(UTEST_DIR)/math_ref.so\
 		-o $@\
@@ -81,8 +90,8 @@ $(LIBS_L)/$(LIBNAME).a
 ############
 #RUN TESTS :
 
-.PHONY : unit-tests ut
-unit-tests ut : list_tests build_tests run_tests
+.PHONY : tests
+tests : list_tests build_tests run_tests
 
 .PHONY : run_tests
 run_tests : $(EXECUTION_STAMPS)
@@ -95,11 +104,6 @@ run_tests : $(EXECUTION_STAMPS)
 
 ###############
 #MISCELLANEOUS:
-
-.PHONY : all_unit_tests aut
-all_unit_tests aut : clean-tests ut
-
-
 
 .PHONY : clean-tests
 clean-tests :
