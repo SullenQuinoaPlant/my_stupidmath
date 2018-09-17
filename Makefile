@@ -6,29 +6,23 @@ endif
 
 OBJS := $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 
-all : $(OUT_DIR_LIB)/$(LIBNAME).a
+all : $(OUT_DIR_LIB)/$(LIBNAME).a header
+
+.PHONY : header
+header : $(OUT_DIR_H)/$(LIBNAME).h
+$(OUT_DIR_H)/$(LIBNAME).h :
+	sed -e '13,14s@\(MYSTUPIDMATH_H\)@LIB\1@'\
+		-e '4s@\([a-z0-9][a-z0-9]*\.h\)   @lib\1@'\
+		$(INC_DIR)/$(NAME).h >\
+		$(OUT_DIR_H)/$(LIBNAME).h
 
 $(OUT_DIR_LIB)/$(LIBNAME).a : $(OBJS)
-	-ar rcs $@ $^
-	cp $(SRC_DIR)/$(NAME).h $(OUT_DIR_H)/$(LIBNAME).h
+	ar rcs $@ $^
 
-#$(OBJ_DIR)/$(NAME).o : $(OBJS)
-#	ld -r $^ -o $@
-
-#specifc file dependencies:
-
-
-#compilation :
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c #| objdir
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS)\
 		-I $(LIBS_I)\
 		-o $@ -c $<
-
-.PHONY : objdir
-objdir :
-	@if [ ! -d $(OBJ_DIR) ]; then\
-		mkdir $(OBJ_DIR);\
-	fi
 
 .PHONY : re fclean clean all
 clean :

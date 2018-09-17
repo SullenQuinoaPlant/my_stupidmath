@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 12:09:11 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 12:26:29 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/15 07:53:34 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,26 @@
 # define SERIES_DEPTH 100
 #endif
 
+///*
+static void					rec(
+	int rank,
+	long double acc,
+	t_u_ata delta_ret)
+{
+	long double	nxt_acc;
+
+	if (acc)
+	{
+		nxt_acc = acc * *delta_ret.arg / (long double)(++rank);
+		rec(rank, nxt_acc, delta_ret);
+		*delta_ret.acc += acc;
+	}
+	else
+		delta_ret.acc = 0;
+}
+//*/
+
+/*
 static void					rec(
 	int rank,
 	long double delta_pow,
@@ -32,6 +52,7 @@ static void					rec(
 	else
 		delta_ret.acc = 0;
 }
+//*/
 
 static long double			series(
 		long double x)
@@ -39,8 +60,8 @@ static long double			series(
 	long double	ret;
 
 	ret = x;
-	rec(1, ret, (t_u_ata){&ret});
-	ret += (x + 1.0);
+	rec(1, x, (t_u_ata){&ret});
+	ret += (1.0L - x);
 	return (ret);
 }
 
