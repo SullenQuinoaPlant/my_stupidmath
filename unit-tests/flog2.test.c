@@ -7,7 +7,7 @@
 int	declare_tests_and_run(int all_of, char *these[])
 {
 	T(test0,
-		assert_true(0 == my_flog2(0));
+		assert_true(-1 == my_flog2(0));
 	)
 	T(test1,
 		assert_true(0 == my_flog2(1));
