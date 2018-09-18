@@ -17,6 +17,8 @@ int		my_flog2(
 {
 	int		i;
 
+	if (!x)
+		return (-1);
 	i = 0;
 	while ((x /= 2))
 		i++;
